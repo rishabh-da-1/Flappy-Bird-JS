@@ -1,0 +1,13 @@
+body{
+    background-color: grey;
+    text-align: center;
+    
+}
+.buttons{
+    margin-left: 50%;
+    display: block;
+}
+#game-window{
+    background-color: skyblue;
+    
+}
