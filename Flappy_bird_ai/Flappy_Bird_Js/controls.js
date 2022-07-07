@@ -1,11 +1,13 @@
 class Controls{
-    constructor(){
+    constructor(cond){
         this.flap = false;
         this.restart = false;
 
         this.cmd = false ;
         
-        this.#control();
+        if(this.cont != "DUMMY"){
+            this.#control();
+        }
     }
 
     #control(){

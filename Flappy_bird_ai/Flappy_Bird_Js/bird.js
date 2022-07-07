@@ -15,13 +15,15 @@ class Bird{
 
         this.gravity = 3;
         this.speed = 4;
-        this.control = new Controls();
+        this.control = new Controls("DUMMY");
 
         this.gameover = false;
         this.score = 0;
         
 
     }
+
+    
 
     B_render(){
         if(this.gameover == false){

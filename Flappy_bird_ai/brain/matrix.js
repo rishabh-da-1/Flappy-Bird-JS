@@ -1,5 +1,5 @@
 class Matrix{
-    constructor(row,col){
+    constructor(row,col,){
         this.row  = row;
         this.col  = col;
         this.data = [];
@@ -10,10 +10,24 @@ class Matrix{
             this.data[i] = new Array(this.col);
             for (var j = 0; j < this.col; j++) {
                 this.data[i][j] = 0;
+                
               }
         }
     }
-
+    adjust(w){
+        for(let i = 0 ; i < this.row ; i++){
+            
+            for (var j = 0; j < this.col; j++) {
+                for(var v = 0 ; v < w.col ; v++){
+                    this.data[i][j] = w[0][v];
+                    console.log(this.data[i][j]);
+                }
+                
+            }
+        }
+        console.log("final value")
+        console.table(this.data);
+    }
     random(){
         for(let i = 0 ; i < this.row ; i++){
             
@@ -22,6 +36,18 @@ class Matrix{
             }
         }
     }
+
+    adj_values(d_values){
+        for(let i = 0 ; i < this.row ; i++){
+            
+            for (var j = 0; j < this.col; j++) {
+                this.data[i][j] = d_values[Math.floor(Math.random() * d_values.length)];             
+            }
+        }
+
+        //console.table(this.data)
+    }
+
     add(m) {
         if (m instanceof Matrix) {
             m = m.data;

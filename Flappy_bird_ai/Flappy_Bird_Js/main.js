@@ -16,6 +16,8 @@ function Animate(){
 
 let r_game = document.getElementById('b1');
 let r_weight  = document.getElementById('b2');
+let r_mutate = document.getElementById('b3');
+let r_accha = document.getElementById('b4');
 
 r_game.addEventListener('click' ,function(){
     for (let i = 0; i < 1000; i++) {
@@ -38,6 +40,24 @@ r_weight.addEventListener('click' ,function(){
     }
 })
 
+r_mutate.addEventListener('click', function(){
+    game.bots.B_selection();
 
+
+    // for(let i = 0 ; i < game.bots.amount ; i++){
+    //     game.bots.bots[i].score = 0 ;
+    // }
+})
+
+r_accha.addEventListener('click',function(){
+    for(let i = 0 ; i < game.bots.amount ; i ++){
+        console.log("weights-IH")
+        console.table(game.bots.brains[i].weights_IH.data)
+
+        console.log("weights-HO")
+        console.table(game.bots.brains[i].weights_HO.data)
+        
+    }
+})
 
 Animate()

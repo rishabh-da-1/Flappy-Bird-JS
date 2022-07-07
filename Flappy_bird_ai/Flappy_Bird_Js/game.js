@@ -47,10 +47,15 @@ class Game {
         for (let i = 0; i < 1000; i++) {
             for(let j = 0 ; j < this.bots.bots.length ; j++){
                 if (this.pipe_arr[i].pipe_up.x == this.bots.bots[j].x - 60) {
-                    this.bots.bots[j].score+=1;
+                    if(this.bots.bots[j].gameover == false){
+                        this.bots.bots[j].score++;
+
+                        
+                    }
                     
                 }
             }
+            
         }
         
     }

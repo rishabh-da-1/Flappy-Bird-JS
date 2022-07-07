@@ -25,8 +25,7 @@ class Neural_Network {
 
         this.weights_HO_split = new Matrix(this.output_nodes, this.hidden_nodes);
 
-       
-
+        
     }
     FeedForward(inputs) {
         inputs = Matrix.fromArray(inputs)
@@ -41,25 +40,18 @@ class Neural_Network {
 
         this.hidden = hidden_outputs;
         
+        
         return outputs;
 
     }
-    o_weights(){
-        this.weights_HO.print();
-        this.weights_IH.print();
+    adj_weights(weights_hidden , weights_output){
+        
+        
+        // weights_hidden = Matrix.fromArray(weights_hidden);
+        // weights_output = Matrix.fromArray(weights_output);
 
-        this.bias_HO.print();
-        this.bias_IH.print();
-
-    }
-    r_weights(){
-        this.weights_HO.random();
-        this.weights_IH.random();
-
-        this.bias_HO.random();
-        this.bias_IH.random();
-    }
-    adjust(weights){
+        this.weights_IH.adj_values(weights_hidden);
+        this.weights_HO.adj_values(weights_output);
         
     }
 
